@@ -42,7 +42,7 @@ Ahora vaya a la aplicación [`localhost:8000`](localhost:8000).
 
 
 ## Contacto
-Si necesitas ayuda enviar email a `richard.j.mora.d@gmail.com`
+Si necesitas ayuda o solo agradecer enviar email a `richard.j.mora.d@gmail.com`
 
 Para obtener más información sobre la api Cedula favor echa un vistazo a [`http://cedula-api.herokuapp.com/`](http://cedula-api.herokuapp.com/).
 
