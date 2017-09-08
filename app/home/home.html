@@ -1,0 +1,50 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">Panel de consulta</h3>
+    </div>
+    <div class="panel-body">
+        <form name="form" ng-submit="search()" class="form-inline" role="form"> 
+            <div class="form-group">
+                <div class="col-sm-3">
+                    <select name="nacionalidad" ng-model="nacionalidad" class="form-control">
+                        <option value="">Selecione</option>
+                        <option value="V">V</option>
+                        <option value="E">E</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="number" name="cedula" ng-model="cedula" class="form-control" id="" placeholder="12345678">
+            </div>
+            <button type="submit" ng-click="search()" class="btn btn-primary">Buscar</button>
+        </form>
+        <br>
+        <!-- ng-if="error" -->
+        <div class="alert alert-danger" ng-if="error">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            <strong>¡Advertencia! </strong>{{error}}
+        </div>
+        
+        <hr>
+        <div class="list-group" ng-controller="homeCtrl">
+            <!-- ng-repeat="result in results" -->
+            <div ng-repeat="result in results">
+                <li class="list-group-item">Cedula: <strong>{{ result.cedula }}</strong></li>
+                <li class="list-group-item">Nacionalidad: <strong>{{ result.nacionalidad }}</strong></li>
+                <li class="list-group-item">Nombres: <strong>{{ result.nombres }}</strong></li>
+                <li class="list-group-item">Apellidos: <strong>{{ result.apellidos }}</strong></li>
+                <li class="list-group-item">Nombre Completo: <strong>{{ result.completo }}</strong></li>
+                <li class="list-group-item">Estado: <strong>{{ result.estado }}</strong></li>
+                <li class="list-group-item">Municipio: <strong>{{ result.municipio }}</strong></li>                
+                <li class="list-group-item">Parroquia: <strong>{{ result.parroquia }}</strong></li>                
+                <li class="list-group-item">Direccion: <strong>{{ result.direccion }}</strong></li>                
+                <li class="list-group-item">¿Mayor de edad?: 
+                    <span class="glyphicon glyphicon-ok text-success" aria-hidden="true" ng-if="result.mayor == true"></span> 
+                    <span class="glyphicon glyphicon-remove text-danger" aria-hidden="true" ng-if="result.mayor != true"></span>                   
+            </div>
+        </div>
+        <hr>
+    </div>
+</div>
+<h4>Respuesta de la api en formato JSON</h4>
+<pre>{{results}}</pre>
